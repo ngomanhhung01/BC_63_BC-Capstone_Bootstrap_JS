@@ -1,0 +1,24 @@
+.brand-box {
+  border: $bd-1 solid $color-white-8;
+  border-radius: $border-radius-2;
+  width: -moz-fit-content;
+  width: fit-content;
+  background-color: $color-white-8;
+  padding: $pd-0 5px;
+}
+
+.form-select {
+  display: block;
+  width: 100%;
+  padding: $pd-6 $pd-7 $pd-6 $pd-5;
+  font-size: $fs-8;
+  font-weight: $fw-2;
+  line-height: $lh-3;
+  color: #212529;
+  background-color: $color-white-5;
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 16px 12px;
+  border: $bd-1 solid #ced4da;
+  border-radius: 0.25rem;
+}

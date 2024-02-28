@@ -1,0 +1,16 @@
+.btn {
+  position: relative;
+  padding: $pd-3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: $border-radius-3;
+  font-family: "Muli";
+  font-size: $fs-6;
+  line-height: $lh-1;
+  cursor: pointer;
+}
+
+.btn + .btn {
+  margin-left: $mg-5;
+}

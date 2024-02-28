@@ -1,0 +1,23 @@
+.nav1 {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.nav2 {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+nav.black {
+  background: $color-black-3;
+}
+
+.nav-link .badge {
+  position: relative;
+  padding: 0.2em 0.5em;
+  top: -10px;
+  left: -12px;
+  z-index: 1;
+}

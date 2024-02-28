@@ -1,0 +1,45 @@
+.btn {
+  border: $bd-0;
+  color: $color-white-4;
+  background-color: $color-blue-1;
+  transition: all 0.15s;
+  &:hover {
+    outline: none;
+    background-color: $color-blue-2;
+  }
+  &:focus {
+    outline: 0;
+    box-shadow: none !important;
+    box-shadow: 0 0 0 2px $color-blue-3, inset 0 0 0 2px $color-white-5;
+  }
+  &:active {
+    transform: scale(0.95);
+    background-color: $color-blue-1;
+  }
+}
+
+.btn-banner:hover {
+  background-color: $color-white-5;
+}
+#btnDelete {
+  background-color: $color-red-1;
+  &:hover {
+    background-color: $color-orange-1;
+  }
+}
+
+#btnEdit {
+  background-color: $color-yellow-2;
+}
+#btnAddPhone {
+  @extend #btnEdit;
+}
+#btnUpdate {
+  @extend #btnEdit;
+}
+
+#btnEdit:hover,
+#btnAddPhone:hover,
+#btnUpdate:hover {
+  background-color: $color-yellow-3;
+}

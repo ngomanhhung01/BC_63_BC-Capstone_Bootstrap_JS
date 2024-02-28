@@ -1,0 +1,12 @@
+// Placeholder
+%before-style {
+  display: block;
+  content: "";
+  position: absolute;
+  width: $w-1;
+  height: $h-1;
+  background: $color-pink-1;
+  border-radius: $border-radius;
+  z-index: -1;
+  animation: 1s clockwise infinite;
+}

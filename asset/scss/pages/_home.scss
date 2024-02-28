@@ -1,0 +1,81 @@
+body {
+  background: {
+    image: url(../img/bg.jpg);
+    size: cover;
+  }
+}
+
+.container {
+  margin-top: $mg-1;
+}
+
+a {
+  text-decoration: none;
+}
+
+h2 {
+  color: $color-white-1;
+  font: {
+    family: "Times New Roman", Times, serif;
+    size: $fs-1;
+  }
+  @media (max-width: 768px) {
+    font-size: $fs-2;
+  }
+  @media (max-width: 576px) {
+    font-size: $fs-3;
+  }
+}
+
+.homeEffect {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin: $mg-2 auto;
+  width: $w-1;
+  height: $h-1;
+  background: $color-white-2;
+  border-radius: $border-radius;
+  font-family: "Montserrat", sans-serif;
+  font-size: $fs-4;
+  font-weight: $fw-1;
+  letter-spacing: $ls-1;
+  transition: 1s box-shadow;
+}
+
+.pic:hover {
+  h2 {
+    color: $color-yellow-1;
+  }
+  .homeEffect {
+    box-shadow: 0 5px 35px 0px $color-black-1;
+    &:before {
+      @extend %before-style;
+    }
+    &:after {
+      @extend %before-style;
+      background: $color-yellow-1;
+      animation: 2s counterclockwise infinite;
+    }
+  }
+  .underline-hover-effect:before {
+    width: 100%;
+  }
+}
+
+.underline-hover-effect {
+  display: inline-block;
+  padding-bottom: $pd-1;
+  position: relative;
+  &:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 3px;
+    background-color: $color-yellow-1;
+    transition: width 0.25s ease-out;
+  }
+}

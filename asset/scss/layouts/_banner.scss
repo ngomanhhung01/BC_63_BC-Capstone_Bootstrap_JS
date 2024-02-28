@@ -1,0 +1,30 @@
+.banner-image {
+  background: linear-gradient($color-blue-5, $color-red-2),
+    url(../img/banner.jpg);
+  background-size: cover;
+  background-position: center;
+  & .btn {
+    font-size: $fs-7;
+  }
+}
+.banner-phone-image img {
+  width: $w-3;
+}
+
+.star-rating a {
+  color: $color-white-4;
+  margin-right: $mg-6;
+  &:hover {
+    color: $color-white-5;
+  }
+}
+
+.aa {
+  line-height: $lh-2;
+}
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+}
