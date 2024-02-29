@@ -1,0 +1,185 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  html {
+    position: relative;
+    min-height: 100%;
+    font-size: 16px;
+  }
+  
+  body {
+    margin-bottom: 0px;
+    background-color: #f7f7f7;
+  }
+  
+  p {
+    margin: 0 0 16px;
+  }
+  
+  h2 {
+    margin: 0px;
+  }
+  
+  .btn {
+    border: 0px;
+    color: rgba(255, 255, 255, 0.85);
+    background-color: #294d5c;
+    transition: all 0.15s;
+  }
+  .btn:hover {
+    outline: none;
+    background-color: #5f9db8;
+  }
+  .btn:focus {
+    outline: 0;
+    box-shadow: none !important;
+    box-shadow: 0 0 0 2px #404b61, inset 0 0 0 2px #ffffff;
+  }
+  .btn:active {
+    transform: scale(0.95);
+    background-color: #294d5c;
+  }
+  
+  .btn-banner:hover {
+    background-color: #ffffff;
+  }
+  
+  #btnDelete {
+    background-color: #e7380c;
+  }
+  #btnDelete:hover {
+    background-color: #e96949;
+  }
+  
+  #btnEdit, #btnUpdate, #btnAddPhone {
+    background-color: #f0b80f;
+  }
+  
+  #btnEdit:hover,
+  #btnAddPhone:hover,
+  #btnUpdate:hover {
+    background-color: #f1ca55;
+  }
+  
+  .nav1 {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+  }
+  
+  .nav2 {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+  }
+  
+  nav.black {
+    background: rgba(0, 0, 0, 0.8);
+  }
+  
+  .nav-link .badge {
+    position: relative;
+    padding: 0.2em 0.5em;
+    top: -10px;
+    left: -12px;
+    z-index: 1;
+  }
+  
+  header #navbarColor01 a {
+    transition: 0.3s all ease-in-out;
+  }
+  
+  header #navbarColor01 a:hover {
+    transform: scale(1.15);
+  }
+  
+  .gradient-custom {
+    background: llinear-gradient(rgba(45, 46, 52, 0.8));
+  }
+  
+  .main-color {
+    background: #2c5364;
+  }
+  
+  footer {
+    bottom: 0;
+    width: 100%;
+  }
+  
+  @media (max-width: 991.5px) {
+    .card span {
+      font-size: 1.1rem;
+    }
+    #selectList {
+      width: 100% !important;
+    }
+  }
+  @media (max-width: 525.5px) {
+    #content.my-5 {
+      margin-top: 20px !important;
+      margin-bottom: 20px !important;
+    }
+    .col-lg-4,
+    .col-md-6 {
+      padding-left: 0px;
+    }
+    .cart__contents {
+      width: 400px;
+    }
+    #selectList {
+      width: 100% !important;
+    }
+  }
+  main {
+    background-color: #ffffff;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+  
+  body {
+    padding-top: 70px;
+  }
+  
+  .phoneBanner {
+    background-color: rgba(29, 38, 113, 0.8);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    align-items: center;
+  }
+  
+  #formPhone {
+    width: 450px;
+    min-height: 500px;
+    height: auto;
+    border-radius: 5px;
+    margin: 2% auto;
+    box-shadow: 0 9px 50px hsla(216, 83%, 68%, 0.31);
+    padding: 2%;
+    background-image: linear-gradient(250deg, #e3ecfd, #fff0e8);
+  }
+  
+  #header-title {
+    padding-top: 15px;
+    text-align: center;
+    font-size: 210%;
+    font-family: "Playfair Display", serif;
+    color: #3e403f;
+  }
+  
+  .sp-thongbao {
+    color: red;
+    margin-left: 40px;
+  }
+  
+  .input-group-text {
+    padding: 0.7rem 0.75rem;
+  }
+  
+  .form-group {
+    margin-bottom: 0.5rem;
+  }
+  
+  .form-control {
+    height: auto;
+  }/*# sourceMappingURL=admin.css.map */

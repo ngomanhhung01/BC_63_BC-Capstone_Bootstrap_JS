@@ -1,0 +1,53 @@
+main {
+    background-color: $color-white-5;
+    border-top-left-radius: $border-radius-1;
+    border-top-right-radius: $border-radius-1;
+  }
+  
+  body {
+    padding-top: $pd-2;
+  }
+  
+  .phoneBanner {
+    background-color: $color-blue-5;
+    border-top-left-radius: $border-radius-1;
+    border-top-right-radius: $border-radius-1;
+    align-items: center;
+  }
+  
+  #formPhone {
+    width: $w-2;
+    min-height: $h-2;
+    height: auto;
+    border-radius: $border-radius-2;
+    margin: 2% auto;
+    box-shadow: 0 9px 50px $color-blue-6;
+    padding: 2%;
+    background-image: linear-gradient(250deg, $color-white-6, $color-white-7);
+  }
+  
+  #header-title {
+    padding-top: $pd-3;
+    text-align: center;
+    font-size: 210%;
+    font-family: "Playfair Display", serif;
+    color: $color-black-2;
+  }
+  
+  .sp-thongbao {
+    color: $color-red-3;
+    margin-left: $mg-3;
+  }
+  
+  .input-group-text {
+    padding: $pd-4 $pd-5;
+  }
+  
+  .form-group {
+    margin-bottom: $mg-4;
+  }
+  
+  .form-control {
+    height: auto;
+  }
+  
