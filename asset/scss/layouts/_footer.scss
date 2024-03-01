@@ -3,15 +3,6 @@ footer {
   width: 100%;
 }
 
-@media (max-width: 991.5px) {
-  .card span {
-    font-size: 1.1rem;
-  }
-  #selectList {
-    width: 100% !important;
-  }
-}
-
 @media (max-width: 525.5px) {
   #content.my-5 {
     margin-top: $mg-2 !important;

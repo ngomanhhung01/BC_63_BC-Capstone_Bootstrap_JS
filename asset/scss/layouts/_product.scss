@@ -22,3 +22,12 @@
   border: $bd-1 solid #ced4da;
   border-radius: 0.25rem;
 }
+
+.product-cart {
+  position: relative;
+}
+
+.btn-cart {
+  position: absolute;
+  bottom: 10px;
+}

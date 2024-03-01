@@ -15,27 +15,8 @@ const renderProductList = (phoneList) => {
     content += ` 
     <div class="col-lg-3 col-md-6 pt-4">
     <div class="card text-black h-100">
-    <div class="content-overlay"></div>
       <img src=${product.img} class="card-img" alt="Phone Image" />
-      <div class="content-details fadeIn-top">
-      <h3 class ='pb-5'>Thông số kỹ thuật</h3>
-            <div class="d-flex justify-content-start py-1">
-          <span class='text-light'><b>Screen:</b></span>
-          <span class='text-light'>&nbsp ${product.screen}</span>
-        </div>
-        <div class="d-flex justify-content-start py-1">
-          <span class='text-light'><b>Back Camera:</b> ${
-            product.backCamera
-          }</span>
-        </div>
-        <div class="d-flex justify-content-start py-1">
-          <span class='text-light'><b>Front Camera:</b> ${
-            product.frontCamera
-          }</span>
-        </div>
-
-        <p class = 'pt-5'><u>click here for more details</u></p>
-      </div>
+     
       <div class="card-body">
         <div class="text-center">
           <h5 class="card-title pt-3">${product.name}</h5>
@@ -50,7 +31,7 @@ const renderProductList = (phoneList) => {
         <div class="d-flex justify-content-start pt-3">
           <span><b>Description:</b> ${product.desc}</span>
         </div>
-        <div class="d-flex justify-content-between pt-3">
+        <div class="product-cart d-flex justify-content-between pt-3">
           <div class="text-warning">
               <i class="fa fa-star"></i>
               <i class="fa fa-star"></i>
@@ -60,7 +41,7 @@ const renderProductList = (phoneList) => {
           </div>
           <span class = 'text-success'><b>In Stock</b></span>
         </div>
-        <button type="button" class="btn btn-block w-50" onclick ="btnAddToCart('${
+        <button type="button" class="btn-cart btn btn-block w-50"('${
           product.id
         }')">Add to cart</button>
       </div>
