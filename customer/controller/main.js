@@ -2,17 +2,6 @@ import Products from "../../admin/model/Products.js";
 import Api from "../../admin/servies/Api.js";
 import { getEle } from "../../admin/controller/controller.js";
 
-
-// Thêm class black đổi màu cho header khi scroll
-window.addEventListener("scroll", function () {
-  const header = document.querySelector("nav");
-  if (window.scrollY > 20) {
-    header.classList.add("black");
-  } else {
-    header.classList.remove("black");
-  }
-});
-
 /* Tạo đối tượng api từ lớp đối tượng Api */
 const api = new Api();
 
@@ -67,7 +56,7 @@ const renderProductList = (phoneList) => {
               <i class="fa fa-star"></i>
               <i class="fa fa-star"></i>
               <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
+              <i class="lni lni-star"></i>
           </div>
           <span class = 'text-success'><b>In Stock</b></span>
         </div>
@@ -79,56 +68,6 @@ const renderProductList = (phoneList) => {
   </div>`;
   });
   getEle("phoneList").innerHTML = content;
-};
-
-
-/* Hàm render cart ra giao diện */
-const renderCart = (cart) => {
-  let content = "";
-  cart.forEach((item) => {
-    content += `
-  <div class="product">
-    <div class="product__1">
-      <div class="product__thumbnail">
-        <img src=${item.product.img} 
-          alt="Italian Trulli">
-      </div>
-      <div class="product__details">
-        <div style="margin-bottom: 8px;"><b>${item.product.name}</b></div>
-        <div style="font-size: 90%;">Screen: <span class="tertiary">${
-          item.product.screen
-        }</span></div>
-        <div style="font-size: 90%;">Back Camera: <span class="tertiary">${
-          item.product.backCamera
-        }</span></div>
-        <div style="font-size: 90%;">Front Camera: <span class="tertiary">${
-          item.product.frontCamera
-        }</span></div>
-        <div style="margin-top: 8px;"><a href="#!" onclick ="btnRemove('${
-          item.product.id
-        }')">Remove</a></div>
-      </div>
-    </div>
-    <div class="product__2">
-      <div class="qty">
-        <span><b>Quantity:</b> </span> &nbsp &nbsp
-        <span class="minus bg-dark" onclick ="btnMinus('${
-          item.product.id
-        }')">-</span>
-        <span class="quantityResult mx-2">${item.quantity}</span>
-        <span class="plus bg-dark" onclick ="btnAdd('${
-          item.product.id
-        }')">+</span>
-      </div>
-      <div class="product__price"><b>$${
-        item.quantity * item.product.price
-      }</b></div>
-    </div>
-  </div>
-`;
-  });
-  getEle("cartList").innerHTML = content;
- 
 };
 
 /* Sự kiện window.onload để khi toàn bộ trang web tải xong, các hàm Js sẽ được thực thi */
