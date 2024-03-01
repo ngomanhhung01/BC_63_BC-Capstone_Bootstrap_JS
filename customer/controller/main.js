@@ -79,11 +79,6 @@ window.onload = async () => {
     // hiển thị danh sách sản phẩm trên giao diện
     renderProductList(res.data);
   }
-  // áp dụng toán tử ba ngôi để gán giá trị cho cart, nếu đã có dữ liệu cart trong local Storage thì dùng JSON.parse để gán dữ liệu bình thường, nếu không thì card = []
-  cart = localStorage.getItem("cart")
-    ? JSON.parse(localStorage.getItem("cart"))
-    : [];
-  renderCart(cart); // render ra giao diện
 };
 
 /* Lọc hiển thị sản phẩm theo loại */
