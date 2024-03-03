@@ -307,6 +307,7 @@ small {
   background-color: #fff;
   transition: all 0.25s ease-in-out;
   transform: translate(-100%, 0);
+  z-index: 1;
 }
 
 .cart__products,

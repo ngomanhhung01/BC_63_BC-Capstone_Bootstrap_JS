@@ -3,6 +3,10 @@ import Api from "../../admin/servies/Api.js";
 import {CartItem} from "../model/cartItem.js";
 import { getEle } from "../../admin/controller/controller.js";
 
+
+
+
+
 /* Tạo đối tượng api từ lớp đối tượng Api */
 const api = new Api();
 
@@ -52,6 +56,19 @@ const renderProductList = (phoneList) => {
   getEle("phoneList").innerHTML = content;
 };
 
+// Tính Tổng tiền
+
+const calculateTotal = (cart) => {
+  let total = 0;
+  cart.forEach((item) => {
+    total += item.product.price * item.quantity;
+  });
+  return total;
+};
+
+// Tìm kiếm item trong cart 
+const findCartItem = (cart, id) => cart.find((item) => item.product.id === id)
+
 const renderCart = (cart) => {
   let content = '';
   cart.forEach((ele) => {
@@ -84,7 +101,7 @@ const renderCart = (cart) => {
   cart.forEach((ele) => {
     cartCount += ele.quantity;
   });
-  const subTotal = calculateSubTotal(cart);
+  const subTotal = calculateTotal(cart);
   const shipping = subTotal > 0 ? 10 : 0;
   getEle('cartCount').innerHTML = cartCount;
   getEle('shipping').innerHTML = '$' + shipping;
@@ -126,30 +143,53 @@ getEle("selectList").onchange = async () => {
   }
 };
 
-
-window.btnAddToCart = async (productId) => {
-  const phoneData = await service.getPhoneById(productId);
-  const { id, name, price, screen, backCamera, frontCamera, img, desc, type } = phoneData;
-  const product = new Product(
-    id,
-    name,
-    price,
-    screen,
-    backCamera,
-    frontCamera,
-    img,
-    desc,
-    type
-  );
-  const newCartItem = new CartItem(product, 1);
-  let cartItem = findItemById(cart, newCartItem.product.id);
-  !cartItem ? cart.push(newCartItem) : cartItem.quantity++;
-  renderCart(cart);
-  localStorage.setItem('cart', JSON.stringify(cart));
+// Thêm vào giỏ hàng
+const btnAddToCart = async (id) => {
+  // đợi api trả kết quả về gán vào biến res
+  const res = await api.callApi(`Products/${id}`, "GET", null);
+  // dữ liệu trả về thành công
+  if (res.status === 200 && res.statusText === "OK") {
+    const phoneData = res.data;
+    // sử dụng destructuring assignment để trích xuất các thuộc tính vào các biến
+    const {
+      id,
+      name,
+      price,
+      screen,
+      backCamera,
+      frontCamera,
+      img,
+      desc,
+      type,
+    } = phoneData;
+    // tạo đối tượng product từ lớp đối tượng Products
+    const product = new Products(
+      id,
+      name,
+      price,
+      screen,
+      backCamera,
+      frontCamera,
+      img,
+      desc,
+      type,
+    );
+    // tạo đối tượng newCartItem từ lớp đối tượng CartItem
+    const newCartItem = new CartItem(product, 1);
+    // dùng hàm findCarditem để tìm xem newCartItem đã có trong giỏ chưa
+    let cartItem = findCartItem(cart, newCartItem.product.id);
+    // nếu chưa, adđ newCartItem vào giỏ cart, nếu có rồi thì quantity++
+    !cartItem ? cart.push(newCartItem) : cartItem.quantity++;
+    // render ra giao diện
+    renderCart(cart);
+    // lưu giỏ hàng vào local Storage
+    localStorage.setItem("cart", JSON.stringify(cart));
+  }
 };
+window.btnAddToCart = btnAddToCart;
 // dấu cộng trong giỏ hàng
 window.btnAdd = (id) => {
-  let cartItem = findItemById(cart, id);
+  let cartItem = findCartItem(cart, id);
   if (cartItem) cartItem.quantity++;
   renderCart(cart);
   localStorage.setItem('cart', JSON.stringify(cart));
@@ -157,9 +197,9 @@ window.btnAdd = (id) => {
 
 // dấu trừ trong giỏ hàng
 window.btnMinus = (id) => {
-  let cartItem = findItemById(cart, id);
+  let cartItem = findCartItem(cart, id);
   if (cartItem) cartItem.quantity--;
-  cart = cart.filter((ele) => ele.quantity != 0);
+  cart = cart.filter((ele) => ele.quantity > 0);
   renderCart(cart);
   localStorage.setItem('cart', JSON.stringify(cart));
 };
