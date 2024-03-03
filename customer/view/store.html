@@ -48,7 +48,7 @@
           >
             <span class="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse " id="navbarColor01">
+          <div class="collapse navbar-collapse" id="navbarColor01">
             <ul class="navbar-nav mr-auto nav1 d-flex justify-content-end">
               <li class="nav-item text-center">
                 <a
@@ -125,7 +125,6 @@
                       id="cartCount"
                     ></span>
                   </div>
-                 
                 </a>
               </li>
             </ul>
@@ -148,7 +147,11 @@
               <a href=""><i class="lni lni-star"></i></a>
             </div>
             <p class="h5 aa mb-4 pb-3 text-white-50">
-              iPhone 15 Pro Max là một chiếc điện thoại thông minh cao cấp được mong đợi nhất năm 2023. Với nhiều tính năng mới và cải tiến, iPhone 15 Pro Max chắc chắn sẽ là một lựa chọn tuyệt vời cho những người dùng đang tìm kiếm một chiếc điện thoại có hiệu năng mạnh mẽ, camera chất lượng và thiết kế sang trọng.
+              iPhone 15 Pro Max là một chiếc điện thoại thông minh cao cấp được
+              mong đợi nhất năm 2023. Với nhiều tính năng mới và cải tiến,
+              iPhone 15 Pro Max chắc chắn sẽ là một lựa chọn tuyệt vời cho những
+              người dùng đang tìm kiếm một chiếc điện thoại có hiệu năng mạnh
+              mẽ, camera chất lượng và thiết kế sang trọng.
             </p>
             <h3 class="text-white mb-5">$1.277,54</h3>
             <div class="d-flex">
@@ -189,8 +192,65 @@
       </main>
     </div>
 
-    
-    
+    <!-- Cart -->
+    <div class="meh">
+      <div class="cart is-hidden">
+        <div class="cart__overlay"></div>
+        <div class="cart__contents">
+          <div class="cart__products">
+            <h2>Shopping Cart</h2>
+            <p class="microcopy">An overview of your selected products.</p>
+            <div class="products" id="cartList"></div>
+          </div>
+          <div class="cart__totals">
+            <table class="totals">
+              <tbody>
+                <tr>
+                  <th class="align-left font-normal tertiary">Subtotal</th>
+                  <td class="align-right" id="subTotal">$0</td>
+                </tr>
+                <tr>
+                  <th class="align-left font-normal tertiary">
+                    Shipping <small>(estimated)</small>
+                  </th>
+                  <td class="align-right" id="shipping">$0</td>
+                </tr>
+                <tr>
+                  <th class="align-left font-normal tertiary">
+                    Tax <small>(estimated)</small>
+                  </th>
+                  <td class="align-right" id="tax">$0</td>
+                </tr>
+                <tr>
+                  <th class="align-left">Total</th>
+                  <td class="align-right" id="priceTotal">$0</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td colspan="2" class="tertiary">
+                    <small>Estimations based on New York, United States</small>
+                  </td>
+                </tr>
+              </tfoot>
+            </table>
+            <div class="form__footer">
+              <button class="btn first js-toggle-cart">
+                Continue Shopping
+              </button>
+              <button class="btn yellow-btn" onclick="payNow()">Pay Now</button>
+              <button
+                class="btn me-5 ms-0 px-4 red-btn"
+                onclick="emptyCart()"
+                id="emptyCart"
+              >
+                <i class="fa-solid fa-trash me-2"></i> Empty Cart
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- Footer -->
     <footer class="text-center text-lg-left bg-dark text-light gradient-custom">
